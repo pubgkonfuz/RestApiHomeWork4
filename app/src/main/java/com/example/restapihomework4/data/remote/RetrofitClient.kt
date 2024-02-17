@@ -9,7 +9,7 @@ import java.util.concurrent.TimeUnit
 
 object RetrofitClient {
 
-    private const val BASE_URL = "https://rickandmortyapi.com/"
+    private const val BASE_URL = "https://api.potterdb.com/v1/"
 
     private val okHttpClient = OkHttpClient.Builder()
         .addInterceptor(HttpLoggingInterceptor().setLevel(
@@ -26,5 +26,5 @@ object RetrofitClient {
         .client(okHttpClient)
         .build()
 
-    val characterApiService: CharacterApiService = retrofit.create(CharacterApiService::class.java)
+    val harryCharacterReponse = retrofit.create(CharacterApiService::class.java)
 }
